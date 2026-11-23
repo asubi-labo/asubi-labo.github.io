@@ -1,12 +1,12 @@
-/* ベース設定（ロゴのモカブラウン＆オフホワイトに統一） */
+/* ベース設定（封筒のグリーン系 × ロゴのモカブラウンに統一） */
 :root {
-  --primary-color: #8d7265; /* ロゴの背景と同じモカブラウン */
-  --accent-color: #6b4e3d;  /* 落ち着いた深みのあるブラウン */
-  --text-color: #281815;    /* ロゴの文字と同じダークエスプレッソ */
-  --sub-text: #6e5d56;      /* 優しいグレーブラウン */
-  --bg-color: #f5f2ef;      /* 温かみのあるサンドベージュ背景 */
-  --card-bg: #fcfbf9;       /* ロゴ内の紙色に近いオフホワイト */
-  --border-color: #e6dfd8;  /* 柔らかいベージュの境界線 */
+  --primary-color: #3b5948; /* 落ち着いたフォレストグリーン（ヘッダー・見出しライン） */
+  --accent-color: #2c4738;  /* 深みのあるグリーン（リンク色） */
+  --text-color: #282421;    /* ロゴ文字に馴染むダークチャコールブラウン */
+  --sub-text: #5c635e;      /* 優しいグレーグリーン */
+  --bg-color: #f4f6f4;      /* 清潔感のあるごく淡いセージホワイト背景 */
+  --card-bg: #ffffff;       /* クリーンな白のカード */
+  --border-color: #dce3de;  /* 柔らかいグリーンの境界線 */
 }
 
 * {
@@ -40,14 +40,15 @@ header {
   gap: 1.75rem;
 }
 
-/* ロゴ画像（つぶれ防止＋正方形維持） */
+/* ロゴ画像（グリーンの背景上で綺麗に見せる設定） */
 .site-logo {
   width: 105px;
   height: 105px;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }
 
 .header-text {
@@ -81,12 +82,12 @@ section.philosophy {
   border-radius: 8px;
   padding: 2.5rem 2rem;
   margin-bottom: 2.5rem;
-  box-shadow: 0 2px 8px rgba(40, 24, 21, 0.04);
+  box-shadow: 0 2px 8px rgba(40, 36, 33, 0.04);
 }
 
 section.philosophy h2 {
   font-size: 1.35rem;
-  color: var(--text-color);
+  color: var(--primary-color);
   border-left: 4px solid var(--primary-color);
   padding-left: 0.9rem;
   margin-bottom: 1.5rem;
@@ -104,12 +105,12 @@ section.philosophy p:last-child {
 
 /* 引用部分（路傍の石） */
 blockquote {
-  background-color: #f4efe9;
+  background-color: #eef2ef;
   border-left: 3px solid var(--primary-color);
   padding: 1rem 1.25rem;
   margin: 1.25rem 0;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 /* 会社情報セクション */
@@ -123,7 +124,7 @@ section.company-info {
 
 section.company-info h2 {
   font-size: 1.2rem;
-  color: var(--text-color);
+  color: var(--primary-color);
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border-color);
