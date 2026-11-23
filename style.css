@@ -1,0 +1,177 @@
+/* ベース設定 */
+:root {
+  --primary-color: #1e3a5f; /* 信頼感のあるネイビー */
+  --accent-color: #2b6cb0;  /* リンク・アクセント用ブルー */
+  --text-color: #333333;    /* 読みやすいダークグレー */
+  --sub-text: #666666;
+  --bg-color: #f8fafc;      /* 清潔感のある薄いグレー背景 */
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ヘッダー */
+header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+
+header .en-name {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  letter-spacing: 0.12em;
+}
+
+/* メインコンテンツ */
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+
+section.philosophy {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+section.philosophy h2 {
+  font-size: 1.35rem;
+  color: var(--primary-color);
+  border-left: 4px solid var(--primary-color);
+  padding-left: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+section.philosophy p {
+  margin-bottom: 1.1rem;
+  font-size: 1rem;
+}
+
+section.philosophy p:last-child {
+  margin-bottom: 0;
+}
+
+/* 引用部分（路傍の石） */
+blockquote {
+  background-color: #f1f5f9;
+  border-left: 3px solid var(--accent-color);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* 会社情報セクション */
+section.company-info {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2.25rem 2rem;
+  margin-top: 3rem;
+}
+
+section.company-info h2 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+dl.info-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+dl.info-list dt {
+  width: 30%;
+  font-weight: 600;
+  color: var(--sub-text);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+dl.info-list dd {
+  width: 70%;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+dl.info-list dt:last-of-type,
+dl.info-list dd:last-of-type {
+  border-bottom: none;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  font-size: 0.85rem;
+  color: var(--sub-text);
+}
+
+/* スマホ表示の調整 */
+@media (max-width: 600px) {
+  header {
+    padding: 3rem 1rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  section.philosophy,
+  section.company-info {
+    padding: 1.75rem 1.25rem;
+  }
+  section.philosophy h2 {
+    font-size: 1.2rem;
+  }
+  dl.info-list dt,
+  dl.info-list dd {
+    width: 100%;
+  }
+  dl.info-list dt {
+    border-bottom: none;
+    padding-bottom: 0.1rem;
+  }
+  dl.info-list dd {
+    padding-top: 0.1rem;
+    padding-bottom: 0.85rem;
+  }
+}
