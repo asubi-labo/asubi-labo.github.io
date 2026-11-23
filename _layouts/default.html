@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description | default: 'アスビラボ合同会社（Asubi Labo G.K.）の公式ホームページです。設計から開発まで、手を動かし続けるエンジニアリングを大切にしています。' }}">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
 
+  <header>
+    <div class="header-inner">
+      <a href="index.html" style="display: flex; align-items: center; gap: 1.75rem; text-decoration: none; color: inherit;">
+        <img src="logo.png" alt="Asubi Labo ロゴ" class="site-logo">
+        <div class="header-text">
+          <h1>アスビラボ合同会社</h1>
+          <p class="en-name">Asubi Labo G.K.</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer>
+    <p style="margin-bottom: 0.5rem;">
+      <a href="policy.html" style="color: #fcfbf9; font-size: 0.8rem;">サイトポリシー（当サイトについて）</a>
+    </p>
+    <p>&copy; 2024-2026 Asubi Labo G.K. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
