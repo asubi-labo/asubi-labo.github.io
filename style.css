@@ -1,12 +1,12 @@
-/* ベース設定 */
+/* ベース設定（ロゴのモカブラウン＆オフホワイトに統一） */
 :root {
-  --primary-color: #1e3a5f; /* 信頼感のあるネイビー */
-  --accent-color: #2b6cb0;  /* リンク・アクセント用ブルー */
-  --text-color: #333333;    /* 読みやすいダークグレー */
-  --sub-text: #666666;
-  --bg-color: #f8fafc;      /* 清潔感のある薄いグレー背景 */
-  --card-bg: #ffffff;
-  --border-color: #e2e8f0;
+  --primary-color: #8d7265; /* ロゴの背景と同じモカブラウン */
+  --accent-color: #6b4e3d;  /* 落ち着いた深みのあるブラウン */
+  --text-color: #281815;    /* ロゴの文字と同じダークエスプレッソ */
+  --sub-text: #6e5d56;      /* 優しいグレーブラウン */
+  --bg-color: #f5f2ef;      /* 温かみのあるサンドベージュ背景 */
+  --card-bg: #fcfbf9;       /* ロゴ内の紙色に近いオフホワイト */
+  --border-color: #e6dfd8;  /* 柔らかいベージュの境界線 */
 }
 
 * {
@@ -27,21 +27,30 @@ body {
 /* ヘッダー */
 header {
   background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 4rem 1.5rem;
+  color: #fcfbf9;
+  padding: 3.5rem 1.5rem 3.25rem;
   text-align: center;
 }
 
+/* ロゴ画像（ヘッダー背景に自然に溶け込む設定） */
+.site-logo {
+  display: block;
+  width: 130px;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: 6px;
+}
+
 header h1 {
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 header .en-name {
   font-size: 0.95rem;
-  opacity: 0.85;
+  opacity: 0.9;
   letter-spacing: 0.12em;
 }
 
@@ -58,12 +67,12 @@ section.philosophy {
   border-radius: 8px;
   padding: 2.5rem 2rem;
   margin-bottom: 2.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(40, 24, 21, 0.04);
 }
 
 section.philosophy h2 {
   font-size: 1.35rem;
-  color: var(--primary-color);
+  color: var(--text-color);
   border-left: 4px solid var(--primary-color);
   padding-left: 0.9rem;
   margin-bottom: 1.5rem;
@@ -81,12 +90,12 @@ section.philosophy p:last-child {
 
 /* 引用部分（路傍の石） */
 blockquote {
-  background-color: #f1f5f9;
-  border-left: 3px solid var(--accent-color);
+  background-color: #f4efe9;
+  border-left: 3px solid var(--primary-color);
   padding: 1rem 1.25rem;
   margin: 1.25rem 0;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
 /* 会社情報セクション */
@@ -100,7 +109,7 @@ section.company-info {
 
 section.company-info h2 {
   font-size: 1.2rem;
-  color: var(--primary-color);
+  color: var(--text-color);
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border-color);
@@ -150,10 +159,13 @@ footer {
 /* スマホ表示の調整 */
 @media (max-width: 600px) {
   header {
-    padding: 3rem 1rem;
+    padding: 2.75rem 1rem 2.5rem;
+  }
+  .site-logo {
+    width: 110px;
   }
   header h1 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
   section.philosophy,
   section.company-info {
