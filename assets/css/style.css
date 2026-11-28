@@ -106,10 +106,10 @@ section.philosophy > p:first-child {
 }
 
 /* =========================================
-   00 // INTRODUCTION：Apple風の巨大ヒーローエリア
+   00 // INTRODUCTION：3つの宣言を主役にしたヒーローエリア
    ========================================= */
 section.intro-card {
-  padding: 7.5rem 0 7rem;
+  padding: 6.5rem 0 6rem;
   text-align: center;
   border-bottom: 1px solid var(--border-light);
 }
@@ -117,29 +117,56 @@ section.intro-card {
 .intro-card > p:first-child {
   color: var(--primary-color);
   font-size: 0.9rem;
+  margin-bottom: 2.5rem;
 }
 
-section.intro-card h2 {
-  font-size: clamp(2rem, 5vw, 3.6rem);
+/* 1つ目のリスト：3つの宣言＋ルーツ（主役の大見出し） */
+.intro-card > ul:first-of-type {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.intro-card > ul:first-of-type li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* 1行目：メインの言葉（巨大グラデーション文字） */
+.intro-card > ul:first-of-type li strong {
+  font-size: clamp(1.85rem, 4.5vw, 3.1rem);
   font-weight: 800;
   line-height: 1.25;
-  letter-spacing: -0.035em;
-  margin-bottom: 2rem;
-  background: linear-gradient(120deg, var(--primary-dark) 0%, var(--primary-color) 45%, var(--accent-color) 100%);
+  letter-spacing: -0.03em;
+  background: linear-gradient(120deg, var(--primary-dark) 0%, var(--primary-color) 55%, var(--accent-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.intro-card > p:nth-of-type(2) {
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  font-weight: 500;
-  color: var(--text-sub);
-  max-width: 720px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
+/* 2行目：ルーツの言葉（少し控えめなブランドカラー） */
+.intro-card > ul:first-of-type li span {
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-weight: 600;
+  color: var(--accent-color);
+  letter-spacing: 0.04em;
 }
 
-.intro-card ul {
+/* 会社定義のリード文 */
+.intro-card > p:nth-of-type(2) {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 500;
+  color: var(--text-main);
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+
+/* 2つ目のリスト：事業領域のピル型バッジ */
+.intro-card > ul:last-of-type {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -147,7 +174,7 @@ section.intro-card h2 {
   list-style: none;
 }
 
-.intro-card ul li {
+.intro-card > ul:last-of-type li {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   font-weight: 500;
@@ -157,6 +184,7 @@ section.intro-card h2 {
   border-radius: 999px;
   letter-spacing: 0.02em;
 }
+
 
 /* =========================================
    前半：ハイライトセクション（タイトル＋2〜3行導入）
