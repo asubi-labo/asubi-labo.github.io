@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{% assign blocks = content | split: "<p>===</p>" %}
+
+<main>
+  <!-- 00 // INTRODUCTION -->
+  <section class="intro-card">
+    {{ blocks[0] }}
+  </section>
+
+  <!-- 前半：ハイライト（タイトル ＋ 2〜3行導入） -->
+  <section class="highlights-section">
+    {% for block in blocks offset: 1 %}
+      {% if block contains "<hr />" %}
+        {% assign parts = block | split: "<hr />" %}
+        <div class="highlight-item">
+          {{ parts[0] }}
+          <a href="#detail-{{ forloop.index }}" class="read-more-link">詳しく読む ↓</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  <!-- 後半：詳細ストーリー -->
+  {% for block in blocks offset: 1 %}
+    {% if block contains "<hr />" %}
+      {% assign parts = block | split: "<hr />" %}
+      {% assign heading_part = parts[0] | split: "</h2>" | first %}
+      <section id="detail-{{ forloop.index }}" class="philosophy">
+        {{ heading_part }} — STORY</h2>
+        {{ parts[1] }}
+      </section>
+    {% endif %}
+  {% endfor %}
+
+  <!-- 会社情報 -->
+  <section class="company-info">
+    {{ blocks[4] }}
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="contact-section">
+    {{ blocks[5] }}
+  </section>
+</main>
