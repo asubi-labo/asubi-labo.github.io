@@ -31,5 +31,54 @@
     <p>&copy; 2024-2026 Asubi Labo G.K. All Rights Reserved.</p>
   </footer>
 
+  <footer>
+    <p style="margin-bottom: 0.75rem;">
+      <a href="{{ '/policy.html' | relative_url }}">サイトポリシー（当サイトについて）</a>
+    </p>
+    <p>&copy; 2024-2026 Asubi Labo G.K. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Apple風スクロールアニメーション制御スクリプト -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // アニメーションさせたい要素をまとめて取得
+      const targets = document.querySelectorAll(
+        ".intro-card > *, .highlight-item, section.philosophy > *, .company-info, .contact-section, .policy-page > *"
+      );
+
+      // 初期状態（透明・少し下に配置）をセット
+      targets.forEach((el) => {
+        el.classList.add("reveal");
+      });
+
+      // イントロ部分は開いた瞬間に時間差で順番にふわっと表示
+      const introItems = document.querySelectorAll(".intro-card > *");
+      introItems.forEach((el, index) => {
+        if (index === 1) el.classList.add("reveal-delay-1");
+        if (index === 2) el.classList.add("reveal-delay-2");
+        if (index === 3) el.classList.add("reveal-delay-3");
+      });
+
+      // 画面内に入ったかを監視するObserver
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target); // 一度表示されたら監視を解除
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: "0px 0px -12% 0px", // 画面の下から12%ほど入ったタイミングで発動
+          threshold: 0.05
+        }
+      );
+
+      targets.forEach((el) => observer.observe(el));
+    });
+  </script>
+
 </body>
 </html>
